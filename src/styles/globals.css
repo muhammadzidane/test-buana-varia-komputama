@@ -1,0 +1,10 @@
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+@import url("./checkbox.css");
+@import url("./scrollbar.css");
+@import url("./toast.css");
+@import url("./dialog.css");

@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "standard-with-typescript",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:perfectionist/recommended-line-length"
+  ],
+  "plugins": [
+    "@typescript-eslint", 
+    "perfectionist"
+  ],
+  "rules": {
+    "no-console": ["error", { "allow": ["warn"] }],
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "perfectionist/sort-imports": [
+      "error",
+      {
+        "groups": [
+          "react",
+          "type",
+          "next",
+          ["builtin", "external"],
+          "internal-type",
+          "internal",
+          ["parent-type", "sibling-type", "index-type"],
+          ["parent", "sibling", "index"],
+          "object",
+          "unknown"
+        ],
+        "custom-groups": {
+          "value": {
+            "react": ["react"]
+          },
+          "type": {
+            "react": "react"
+          }
+        },
+        "internal-pattern": ["@/**/**"]
+      }
+    ],
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        "type": "line-length",
+        "order": "desc",
+        "groups": ["callback"],
+        "custom-groups": {
+          "callback": "on*"
+        }
+      }
+    ]
+  }
+}
