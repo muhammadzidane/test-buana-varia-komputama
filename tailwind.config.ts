@@ -60,6 +60,7 @@ const config: Config = {
         primary: "#222831",
         warning: "#E5A443",
         danger: "#EB5757",
+        gold: "#FFDE4D",
       },
       animation: {
         "slide-in-bottom": "slide-in-bottom 250ms ease-out",

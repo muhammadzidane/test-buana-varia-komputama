@@ -3,32 +3,38 @@ import React from "react";
 import Image from "next/image";
 
 const MovieCard: React.FC<MovieCardProps> = ({
-  description,
   thumbnail,
+  isWatched,
+  rating,
   title,
   year,
 }) => {
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-4">
-      <div className="md:flex">
-        <div className="md:shrink-0">
-          <Image
-            className="h-[170px] w-full object-cover md:h-full md:w-48"
-            src={thumbnail}
-            sizes="100vw"
-            alt={title}
-            height={0}
-            width={0}
-          />
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+      <Image
+        className="w-full h-[240px] object-cover"
+        src={thumbnail}
+        alt={title}
+        height={0}
+        width={0}
+      />
+      <div className="px-2 py-3">
+        <div className="flex items-center gap-2 mb-1">
+          <Image src="/svg/icon-star.svg" height={18} alt="star" width={18} />
+          <div className="text-sm text-gray-400">{rating}</div>
         </div>
-        <div className="p-8">
-          <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-            {year}
-          </div>
-          <h1 className="block mt-1 text-lg leading-tight font-medium text-black">
-            {title}
-          </h1>
-          <p className="mt-2 text-gray-500">{description}</p>
+        <div className="font-semibold mb-1">{title}</div>
+        <div className="mb-2">{year}</div>
+        <div className="mt-4">
+          {isWatched ? (
+            <span className="inline-block bg-green-200 text-green-700 text-xs px-2 py-1 rounded-full">
+              Watched
+            </span>
+          ) : (
+            <span className="inline-block bg-red-200 text-red-700 text-xs px-2 py-1 rounded-full">
+              Not Watched
+            </span>
+          )}
         </div>
       </div>
     </div>

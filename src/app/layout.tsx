@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { Toast } from "@/components";
-import NextAuthProvider from "@/plugins/next-auth/provider";
 import CustomSWRConfig from "@/plugins/swr";
 import "@/styles/globals.css";
 const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
@@ -23,9 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <CustomSWRConfig>
-          <NextAuthProvider>{children}</NextAuthProvider>
-        </CustomSWRConfig>
+        <CustomSWRConfig>{children}</CustomSWRConfig>
         <Toast />
       </body>
     </html>
