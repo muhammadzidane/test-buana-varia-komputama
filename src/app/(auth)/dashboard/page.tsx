@@ -16,8 +16,9 @@ const Dashboard = async () => {
 
   return (
     <>
-      <div className="mb-4 font-semibold text-lg">Overview</div>
-      <div className="grid gap-4 grid-cols-6">
+      <div className="mb-6 font-semibold text-2xl">Top Movies</div>
+
+      <div className="grid gap-3 md:gap-4 gap-y-6 grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7">
         {movies.map((movie, movieIndex) => (
           <MovieCard
             description={movie.description}

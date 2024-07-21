@@ -1,28 +1,29 @@
-import bundleAnalyzer from '@next/bundle-analyzer';
-
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-});
+import withPWA from "next-pwa";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'm.media-amazon.com',
-        port: '',
-      }
+        hostname: "m.media-amazon.com",
+        protocol: "https",
+        port: "",
+      },
     ],
   },
   async rewrites() {
     return [
       {
-        source: '/',
-        destination: '/dashboard',
+        destination: "/dashboard",
+        source: "/",
       },
     ];
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+const pwaConfig = {
+  disable: process.env.NODE_ENV === "development",
+  dest: "public",
+};
+
+export default withPWA(pwaConfig)(nextConfig);
