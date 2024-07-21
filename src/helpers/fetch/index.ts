@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { envConfig } from "@/constants";
 
 export const customFetch = async <T>(
   url: string,
-  options: FetchOptions = {}
+  options: any = {}
 ): Promise<T> => {
   const mainApi = envConfig.baseUrl;
   const baseUrlApi = mainApi + url;
@@ -14,7 +16,7 @@ export const customFetch = async <T>(
     Authorization: `Bearer ${token}`,
   };
 
-  const config: FetchOptions = {
+  const config = {
     ...options,
     headers: {
       ...defaultHeaders,
@@ -31,7 +33,7 @@ export const customFetch = async <T>(
     const response = await fetch(baseUrlApiWithParams, config);
 
     if (!response.ok) {
-      const error: CustomFetchError = new Error(response.statusText);
+      const error: any = new Error(response.statusText);
       error.response = response;
       error.status = response.status;
       throw error;

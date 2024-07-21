@@ -1,4 +1,4 @@
-import withPWA from "next-pwa";
+import withSerwistInit from "@serwist/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,10 +21,9 @@ const nextConfig = {
   },
 };
 
-const pwaConfig = {
-  disable: process.env.NODE_ENV === "development",
-  sw: "service-worker.js",
-  dest: "public",
-};
+const withSerwist = withSerwistInit({
+  swDest: "public/sw.js", // where the service worker code will end up
+  swSrc: "src/app/sw.ts", // where the service worker src is
+});
 
-export default withPWA(pwaConfig)(nextConfig);
+export default withSerwist(nextConfig);
