@@ -10,7 +10,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
   year,
 }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="cursor-pointer max-w-sm rounded overflow-hidden shadow-lg">
       <Image
         className="w-full h-[240px] object-cover"
         src={thumbnail}
@@ -23,7 +23,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
           <Image src="/svg/icon-star.svg" height={18} alt="star" width={18} />
           <div className="text-sm text-gray-400">{rating}</div>
         </div>
-        <div className="font-semibold mb-1">{title}</div>
+        <div className="font-semibold mb-1 truncate">{title}</div>
         <div className="mb-2">{year}</div>
         <div className="mt-4">
           {isWatched ? (

@@ -22,11 +22,51 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          href="/icons/icon-192x192.png"
+          type="image/png"
+          sizes="192x192"
+          rel="icon"
+        />
+        <link
+          href="/icons/icon-192x192.png"
+          type="image/png"
+          sizes="256x256"
+          rel="icon"
+        />
+        <link
+          href="/icons/icon-192x192.png"
+          type="image/png"
+          sizes="384x384"
+          rel="icon"
+        />
+        <link
+          href="/icons/icon-192x192.png"
+          type="image/png"
+          sizes="512x512"
+          rel="icon"
+        />
         <link href="/manifest.json" rel="manifest" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body className={inter.className}>
         <CustomSWRConfig>{children}</CustomSWRConfig>
         <Toast />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                  }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                  });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );

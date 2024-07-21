@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
+    "build:sw": "tsc service-worker.js --outDir public --esModuleInterop --module commonjs --target es6",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -22,6 +23,10 @@
     "react-datepicker": "^6.9.0",
     "react-dom": "^18",
     "swr": "^2.2.5",
+    "workbox-precaching": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0",
+    "workbox-webpack-plugin": "^7.1.0",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
@@ -49,6 +54,7 @@
     "postcss": "^8",
     "prettier": "2.8.7",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "webpack": "^5.93.0"
   }
 }

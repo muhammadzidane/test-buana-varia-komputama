@@ -1,2 +1,1 @@
-export { default as DashboardDialog } from "./DashboardDialog";
-export { default as BearCounter } from "./BearCounter";
+export { default as TopMoviesSkeleton } from "./TopMoviesSkeleton";

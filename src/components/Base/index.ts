@@ -7,6 +7,7 @@ export { default as Skeleton } from "./Skeleton";
 export { default as Divider } from "./Divider";
 export { default as Popover } from "./Popover";
 export { default as Loading } from "./Loading";
+export { default as Section } from "./Section";
 export { default as Button } from "./Button";
 export { default as Select } from "./Select";
 export { default as Dialog } from "./Dialog";
