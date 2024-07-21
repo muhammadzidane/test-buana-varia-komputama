@@ -9,9 +9,9 @@ import CustomSWRConfig from "@/plugins/swr";
 import "@/styles/globals.css";
 const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
-const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
+const APP_NAME = "Buana App";
+const APP_DEFAULT_TITLE = "Test Buana Varia Komputama";
+const APP_TITLE_TEMPLATE = "%s - Buana App";
 const APP_DESCRIPTION = "Best PWA app in the world!";
 
 export const metadata: Metadata = {
