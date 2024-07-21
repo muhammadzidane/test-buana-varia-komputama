@@ -1,8 +1,6 @@
 interface MovieCardProps {
-  description: string;
-  isWatched: boolean;
-  thumbnail: string;
-  rating: number;
+  onClick: () => void;
+  poster: string;
   title: string;
-  year: number;
+  year: string;
 }

@@ -6,8 +6,6 @@ interface Params extends UnknownParams {
 }
 
 interface BaseResponseApi<T> {
-  total: number;
-  limit: number;
-  page: number;
-  data: T;
+  success: boolean;
+  result: T;
 }

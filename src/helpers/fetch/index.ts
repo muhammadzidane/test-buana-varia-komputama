@@ -7,13 +7,12 @@ export const customFetch = async <T>(
   options: any = {}
 ): Promise<T> => {
   const mainApi = envConfig.baseUrl;
+  const apiKey = envConfig.apiKey;
   const baseUrlApi = mainApi + url;
-
-  const token = "your-auth-token";
 
   const defaultHeaders: Record<string, string> = {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
+    Authorization: `apikey ${apiKey}`,
   };
 
   const config = {
@@ -31,6 +30,8 @@ export const customFetch = async <T>(
 
   try {
     const response = await fetch(baseUrlApiWithParams, config);
+
+    console.log(baseUrlApiWithParams);
 
     if (!response.ok) {
       const error: any = new Error(response.statusText);
