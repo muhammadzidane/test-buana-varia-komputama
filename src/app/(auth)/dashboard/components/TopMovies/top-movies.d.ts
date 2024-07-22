@@ -1,3 +1,3 @@
 interface TopMoviesProps {
-  data: MovieData[];
+  data: MovieList[];
 }

@@ -2,6 +2,12 @@ import withSerwistInit from "@serwist/next";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack: (config, { defaultLoaders, isServer, buildId, webpack, dev }) => {
+    // Important to use the default value
+    config.resolve.fallback = { path: false, fs: false };
+
+    return config;
+  },
   images: {
     remotePatterns: [
       {

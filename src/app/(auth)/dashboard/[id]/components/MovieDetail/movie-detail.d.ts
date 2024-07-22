@@ -1,0 +1,3 @@
+interface MovieDetailProps {
+  data: MovieDetail;
+}

@@ -31,8 +31,6 @@ export const customFetch = async <T>(
   try {
     const response = await fetch(baseUrlApiWithParams, config);
 
-    console.log(baseUrlApiWithParams);
-
     if (!response.ok) {
       const error: any = new Error(response.statusText);
       error.response = response;
