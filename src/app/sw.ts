@@ -10,7 +10,20 @@ declare const self: {
   __SW_MANIFEST: Array<PrecacheEntry | string> | undefined;
 } & ServiceWorkerGlobalScope;
 
+const revision = crypto.randomUUID();
+
 installSerwist({
+  fallbacks: {
+    entries: [
+      {
+        matcher({ request }) {
+          return request.destination === "document";
+        },
+        url: "/offline",
+        revision,
+      },
+    ],
+  },
   precacheEntries: self.__SW_MANIFEST,
   runtimeCaching: defaultCache,
   navigationPreload: true,
